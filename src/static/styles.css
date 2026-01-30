@@ -89,11 +89,29 @@ section h3 {
 }
 
 .participants-list {
-  list-style-type: disc;
-  margin-left: 20px;
+  list-style: none;
+  margin-left: 0;
   margin-bottom: 0;
   color: #333;
   font-size: 15px;
+  padding: 0;
+}
+
+.participants-list li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  padding: 2px 0;
+}
+
+.delete-participant {
+  background: none;
+  border: none;
+  color: #c00;
+  margin-left: 8px;
+  cursor: pointer;
+  font-size: 1.2em;
+}
 }
 
 .no-participants {
