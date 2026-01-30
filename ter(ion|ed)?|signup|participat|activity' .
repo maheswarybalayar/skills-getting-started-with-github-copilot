@@ -1,0 +1,23 @@
+[35m.github/steps/2-first-introduction.md[m[36m:[m[32m7[m[36m:[mWe’ve discovered that something’s off in the [1;31msignup[m flow.
+[35m.github/steps/2-first-introduction.md[m[36m:[m[32m8[m[36m:[mStudents can currently [1;31mregister[m for the same activity **more than once**! Let’s see how far Copilot can take us in uncovering the cause and shaping a clean fix.
+[35m.github/steps/2-first-introduction.md[m[36m:[m[32m25[m[36m:[m### :keyboard: Activity: Use Copilot to fix our [1;31mregistration[m bug :bug:
+[35m.github/steps/2-first-introduction.md[m[36m:[m[32m32[m[36m:[m   > @workspace Students are able to [1;31mregister[m twice for an activity.
+[35m.github/steps/2-first-introduction.md[m[36m:[m[32m36[m[36m:[m1. Now that we know the issue is in the `src/app.py` file and the `[1;31msignup[m_for_activity` method, let's follow Copilot's recommendation and go fix it (semi-manually). We'll start with a comment and let Copilot finish the correction.
+[35m.github/steps/2-first-introduction.md[m[36m:[m[32m40[m[36m:[m   1. Scroll near the bottom of the file and find the `[1;31msignup[m_for_activity` method.
+[35m.github/steps/2-first-introduction.md[m[36m:[m[32m42[m[36m:[m   1. Find the comment line that describes adding a student. Above this is where it seems logical to do our [1;31mregistration[m check.
+[35m.github/steps/2-first-introduction.md[m[36m:[m[32m58[m[36m:[m   @app.post("/activities/{activity_name}/[1;31msignup[m")
+[35m.github/steps/2-first-introduction.md[m[36m:[m[32m59[m[36m:[m   def [1;31msignup[m_for_activity(activity_name: str, email: str):
+[35m.github/steps/4-copilot-agent-mode.md[m[36m:[m[32m34[m[36m:[m### :keyboard: Activity: Use Agent mode to add functional "un[1;31mregister[m" buttons
+[35m.github/steps/4-copilot-agent-mode.md[m[36m:[m[32m55[m[36m:[m   > When clicked, it will un[1;31mregister[m that participant from the activity.
+[35m.github/steps/4-copilot-agent-mode.md[m[36m:[m[32m65[m[36m:[m1. Ask Copilot to fix a [1;31mregistration[m bug.
+[35m.github/steps/4-copilot-agent-mode.md[m[36m:[m[32m71[m[36m:[m   > When a participant is [1;31mregister[med, the page must be refreshed to see the change on the activity.
+[35m.github/steps/5-copilot-on-github.md[m[36m:[m[32m28[m[36m:[m   - **title:** `Improve student activity [1;31mregistration[m system`
+[35msrc/README.md[m[36m:[m[32m33[m[36m:[m| POST   | `/activities/{activity_name}/[1;31msignup[m?email=student@mergington.edu` | Sign up for an activity                                             |
+[35msrc/app.py[m[36m:[m[32m55[m[36m:[m@app.post("/activities/{activity_name}/[1;31msignup[m")
+[35msrc/app.py[m[36m:[m[32m56[m[36m:[mdef [1;31msignup[m_for_activity(activity_name: str, email: str):
+[35msrc/static/app.js[m[36m:[m[32m4[m[36m:[m  const [1;31msignup[mForm = document.getElementById("[1;31msignup[m-form");
+[35msrc/static/app.js[m[36m:[m[32m45[m[36m:[m  [1;31msignup[mForm.addEventListener("submit", async (event) => {
+[35msrc/static/app.js[m[36m:[m[32m53[m[36m:[m        `/activities/${encodeURIComponent(activity)}/[1;31msignup[m?email=${encodeURIComponent(email)}`,
+[35msrc/static/app.js[m[36m:[m[32m64[m[36m:[m        [1;31msignup[mForm.reset();
+[35msrc/static/index.html[m[36m:[m[32m24[m[36m:[m      <section id="[1;31msignup[m-container">
+[35msrc/static/index.html[m[36m:[m[32m26[m[36m:[m        <form id="[1;31msignup[m-form">
